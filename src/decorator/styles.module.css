@@ -6,6 +6,7 @@
     width: 500px;
     height: auto;
     overflow: hidden;
+    user-select: none;
 }
 
 .decoratorLine {

@@ -10,6 +10,9 @@ const Welcome = () => {
 	return (
 		<Grid container className={classes.welcomeContainer}>
 			<Grid item>
+				<img src={"/assets/logo.png"} alt={"Logo Feodev"} height={200}/>
+			</Grid>
+			<Grid item>
 				<Typography variant={"h1"} color={"primary"}>{translate("welcome.title")}</Typography>
 			</Grid>
 			<Grid item>

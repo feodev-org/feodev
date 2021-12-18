@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 3vh;
+    top: 90vh;
     border: 1px solid #0C4DA777;
     border-radius: 50%;
 }

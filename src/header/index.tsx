@@ -1,4 +1,4 @@
-import { AppBar, Box, Link, Toolbar, Typography, useScrollTrigger } from "@mui/material";
+import { AppBar, Box, Link, Stack, Toolbar, Typography, useScrollTrigger } from "@mui/material";
 import { cloneElement, ReactElement } from "react";
 import classes from "./styles.module.css";
 import { Link as RouterLink, useParams } from "react-router-dom";
@@ -37,9 +37,12 @@ const Header = () => {
 					<Toolbar className={classes.toolBar}>
 						<Box className={classes.title}>
 							<Link component={RouterLink} to={"/"} underline={"none"} mr={8}>
-								<Typography variant="h4" component="div" color={"primary"}>
-									Feodev
-								</Typography>
+								<Stack direction={"row"} spacing={2}>
+									<img src={"/assets/logo.png"} alt={"Logo Feodev"} height={40}/>
+									<Typography variant="h4" component="div" color={"primary"}>
+										Feodev
+									</Typography>
+								</Stack>
 							</Link>
 						</Box>
 						<Box className={classes.tabs}>
