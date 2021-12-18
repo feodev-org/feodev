@@ -1,4 +1,5 @@
 import type { Partner, Value } from "./types.defs";
+import { Breakpoint } from "@mui/material";
 
 export const PAGE_ANCHORS: string[] = [
 	"accueil",
@@ -6,6 +7,15 @@ export const PAGE_ANCHORS: string[] = [
 	"partenaires",
 	"contact"
 ];
+
+export const BREAKPOINTS: Record<string, Breakpoint> = {
+	DEFAULT: "xs",
+	XS: "xs",
+	SM: "sm",
+	MD: "md",
+	LG: "lg",
+	XL: "xl"
+};
 
 export const texts: string[] = [`in principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum\n
 		hoc erat in principio apud Deum\n
@@ -31,7 +41,14 @@ export const texts: string[] = [`in principio erat Verbum et Verbum erat apud De
 		at ille respondens uni eorum dixit amice non facio tibi iniuriam nonne ex denario convenisti mecum\n
 		tolle quod tuum est et vade volo autem et huic novissimo dare sicut et tibi\n
 		aut non licet mihi quod volo facere an oculus tuus nequam est quia ego bonus sum\n
-		sic erunt novissimi primi et primi novissimi multi sunt enim vocati pauci autem electi`
+		sic erunt novissimi primi et primi novissimi multi sunt enim vocati pauci autem electi`,
+	`tunc si quis vobis dixerit ecce hic Christus aut illic nolite credere
+		surgent enim pseudochristi et pseudoprophetae et dabunt signa magna et prodigia ita ut in errorem inducantur si fieri potest etiam electi\n
+		ecce praedixi vobis\n
+		si ergo dixerint vobis ecce in deserto est nolite exire ecce in penetrabilibus nolite credere\n
+		sicut enim fulgur exit ab oriente et paret usque in occidente ita erit et adventus Filii hominis\n
+		ubicumque fuerit corpus illuc congregabuntur aquilae\n
+		statim autem post tribulationem dierum illorum sol obscurabitur et luna non dabit lumen suum et stellae cadent de caelo et virtutes caelorum commovebuntur\n`
 ];
 
 

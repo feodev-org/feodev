@@ -8,10 +8,17 @@ interface DecoratorProps {
 	text: string;
 	variant?: string;
 	className: string;
+}
+
+interface DecoratorFromTop extends DecoratorProps {
 	top: string;
 }
 
-const Decorator = (props: DecoratorProps) => {
+interface DecoratorFromBottom extends DecoratorProps {
+	bottom: string;
+}
+
+const Decorator = (props: DecoratorFromTop | DecoratorFromBottom) => {
 	const [displayedText, setDisplayedText] = useState<string>(props.text);
 	const decoratorClasses = useClasses([classes.decorator, props.className]);
 
@@ -22,10 +29,15 @@ const Decorator = (props: DecoratorProps) => {
 	}, [props.text, props.variant]);
 
 	return (
-		<Box className={decoratorClasses} sx={{ top: props.top }}>{
-			displayedText.split("\n").map((line, idx) => (
-				<div key={idx} className={classes.decoratorLine}>{line}</div>
-			))}
+		<Box
+			className={decoratorClasses}
+			sx={"top" in props && props.top !== undefined ? { top: props.top } : "bottom" in props && props.bottom !== undefined ? { bottom: props.bottom } : {}}
+		>
+			{
+				displayedText.split("\n").map((line, idx) => (
+					<div key={idx} className={classes.decoratorLine}>{line}</div>
+				))
+			}
 		</Box>
 	);
 };

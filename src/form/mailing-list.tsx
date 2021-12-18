@@ -46,7 +46,7 @@ const MailingListForm = () => {
 			onSubmit={handleSubmit(onFormSubmit)}
 		>
 			<input type={"text"} {...register("important-field")} className={classes.honeypot}/>
-			<Grid item mr={4}>
+			<Grid item mr={{ xs: 0, md: 4 }} xs={12} md={8} className={classes.fieldContainer}>
 				<TextField
 					variant={"outlined"}
 					color={"primary"}
@@ -59,7 +59,7 @@ const MailingListForm = () => {
 					className={classes.field}
 				/>
 			</Grid>
-			<Grid item>
+			<Grid item xs={12} md={3} className={classes.fieldContainer}>
 				<Button type={"submit"} color={"primary"} size={"large"} variant={"contained"} className={classes.submit}>Envoyer</Button>
 			</Grid>
 		</Grid>

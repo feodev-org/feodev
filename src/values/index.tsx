@@ -10,11 +10,18 @@ const Values = () => {
 			<Grid item className={classes.pageTitle}>
 				<PageTitle localizationKey={"values.page-title"}/>
 			</Grid>
-			<Grid item container direction={"row"} justifyContent={"space-between"} alignItems={"flex-start"}
-				  className={classes.container}>
+			<Grid
+				item
+				container
+				direction={"row"}
+				justifyContent={"space-between"}
+				alignItems={"flex-start"}
+				className={classes.container}
+				spacing={2}
+			>
 				{
 					values.map((value, index) => (
-						<Grid item key={value.id} className={classes.containerItem}>
+						<Grid item key={value.id} className={classes.containerItem} xs={12} md={6} lg={4}>
 							<ValueCard {...value} index={index + 1}/>
 						</Grid>
 					))

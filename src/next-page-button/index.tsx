@@ -14,8 +14,10 @@ const NextPageButton = () => {
 
 	return (
 		<Link component={RouterLink} to={"/valeurs"} underline={"none"} onClick={handleNextPage}>
-			<Box className={classes.arrowButton}>
-				<DoubleKeyboardArrowDownIcon color={"primary"} className={arrowButtonIconClasses}/>
+			<Box className={classes.buttonContainer}>
+				<Box className={classes.arrowButton} display={{ xs: "none", sm: "flex" }}>
+					<DoubleKeyboardArrowDownIcon color={"primary"} className={arrowButtonIconClasses}/>
+				</Box>
 			</Box>
 		</Link>
 	);

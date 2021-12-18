@@ -1,5 +1,7 @@
 .description {
     margin: 33px 0;
+    text-align: center;
+    padding: 0 13px;
 }
 
 .partnerTitle {
@@ -16,4 +18,8 @@
 
 .partnerImage:hover {
     opacity: 0.8;
+}
+
+.partnerDescription {
+    text-align: center;
 }

@@ -17,16 +17,16 @@ const Partners = () => {
 			<Grid item className={classes.description}>
 				{translate("partners.description")}
 			</Grid>
-			<Grid item container direction={"column"} justifyContent={"flex-start"} alignItems={"center"}>
+			<Grid item container direction={"column"} justifyContent={"flex-start"} alignItems={"center"} spacing={{ xs: 2, md: 4 }}>
 				{
 					partners.map(partner => (
-						<Grid item key={partner.id} mb={13}>
+						<Grid item key={partner.id}>
 							<PartnerCard {...partner} />
 						</Grid>
 					))
 				}
 				<Grid item key={"proposal"}>
-					<Stack direction={"column"}>
+					<Stack direction={"column"} spacing={{ xs: 2, md: 4 }}>
 						<Typography variant={"h6"} alignSelf={"center"} className={classes.partnerTitle}>{translate("partners.proposal.title")}</Typography>
 						<Typography variant={"caption"}>{translate("partners.proposal.description")}</Typography>
 						<Link component={RouterLink} to={"/contact"} alignSelf={"center"}>Nous contacter</Link>
