@@ -8,19 +8,41 @@ const Welcome = () => {
 	const [translate] = useTranslation();
 
 	return (
-		<Grid container className={classes.welcomeContainer}>
+		<Grid container className={classes.welcomeContainer} spacing={{ xs: 2, md: 4 }}>
 			<Grid item>
-				<img src={"/assets/logo.png"} alt={"Logo Feodev"} height={200}/>
+				<img src={"/assets/logo.png"} alt={"Logo Feodev"} className={classes.logo}/>
 			</Grid>
 			<Grid item>
-				<Typography variant={"h1"} color={"primary"}>{translate("welcome.title")}</Typography>
+				<Typography
+					variant={"h1"}
+					color={"primary"}
+					textAlign={"center"}
+					className={classes.title}
+				>
+					{translate("welcome.title")}
+				</Typography>
 			</Grid>
 			<Grid item>
-				<Typography variant={"h3"} color={"primary"}>{translate("welcome.motto")}</Typography>
+				<Typography
+					variant={"h3"}
+					color={"primary"}
+					textAlign={"center"}
+					className={classes.motto}
+				>
+					{translate("welcome.motto")}
+				</Typography>
 			</Grid>
 			<MailingListForm/>
 			<Grid item>
-				<Typography variant={"caption"} color={"primary"}>{translate("welcome.description")}</Typography>
+				<Typography
+					component={"div"}
+					variant={"caption"}
+					color={"primary"}
+					textAlign={"center"}
+					width={"70vw"}
+				>
+					{translate("welcome.description")}
+				</Typography>
 			</Grid>
 			<NextPageButton/>
 		</Grid>

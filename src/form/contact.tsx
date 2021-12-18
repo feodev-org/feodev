@@ -25,6 +25,7 @@ const contactFormSchema = yup.object({
 const ContactForm = () => {
 	const [translate] = useTranslation();
 	const containerClasses = useClasses([classes.form, classes.contactForm]);
+	const submitButtonClasses = useClasses([classes.contactFormSubmit, classes.submitContainer, classes.fieldContainer]);
 	const fieldClasses = useClasses([classes.field, classes.contactFormField]);
 	const { register, formState: { errors }, handleSubmit } = useForm<ContactFormSchema>({
 		resolver: yupResolver(contactFormSchema)
@@ -50,8 +51,10 @@ const ContactForm = () => {
 			className={containerClasses}
 			onSubmit={handleSubmit(onFormSubmit)}
 		>
-			<input type={"text"} {...register("important-field")} className={classes.honeypot}/>
-			<Grid item>
+			<Grid item xs={12}>
+				<input type={"text"} {...register("important-field")} className={classes.honeypot}/>
+			</Grid>
+			<Grid item xs={12} className={classes.fieldContainer}>
 				<TextField
 					variant={"outlined"}
 					color={"primary"}
@@ -64,7 +67,7 @@ const ContactForm = () => {
 					className={fieldClasses}
 				/>
 			</Grid>
-			<Grid item>
+			<Grid item xs={12} className={classes.fieldContainer}>
 				<TextField
 					variant={"outlined"}
 					color={"primary"}
@@ -77,7 +80,7 @@ const ContactForm = () => {
 					className={fieldClasses}
 				/>
 			</Grid>
-			<Grid item>
+			<Grid item xs={12} className={classes.fieldContainer}>
 				<TextField
 					variant={"outlined"}
 					multiline
@@ -91,7 +94,7 @@ const ContactForm = () => {
 					className={fieldClasses}
 				/>
 			</Grid>
-			<Grid item className={classes.contactFormSubmit}>
+			<Grid item xs={12} className={submitButtonClasses}>
 				<Button type={"submit"} color={"primary"} size={"large"} variant={"contained"}>Envoyer</Button>
 			</Grid>
 		</Grid>

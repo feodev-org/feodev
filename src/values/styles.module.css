@@ -45,7 +45,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    font-size: 13rem;
+    font-size: 9rem;
+    font-weight: bolder;
     color: white;
     line-height: 0.6;
     padding: 0;

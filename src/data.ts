@@ -1,4 +1,5 @@
 import type { Partner, Value } from "./types.defs";
+import { Breakpoint } from "@mui/material";
 
 export const PAGE_ANCHORS: string[] = [
 	"accueil",
@@ -6,6 +7,15 @@ export const PAGE_ANCHORS: string[] = [
 	"partenaires",
 	"contact"
 ];
+
+export const BREAKPOINTS: Record<string, Breakpoint> = {
+	DEFAULT: "xs",
+	XS: "xs",
+	SM: "sm",
+	MD: "md",
+	LG: "lg",
+	XL: "xl"
+};
 
 export const texts: string[] = [`in principio erat Verbum et Verbum erat apud Deum et Deus erat Verbum\n
 		hoc erat in principio apud Deum\n

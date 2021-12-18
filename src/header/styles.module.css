@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.title, .tabs {
+.title, .tabs, .burgerMenu {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -37,4 +37,40 @@
 
 .activeTab:after {
     width: 100%;
+}
+
+.mobileMenu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileMenuItem {
+    text-align: center;
+}
+
+@media screen {
+    .tab {
+        margin: 0 auto;
+        width: fit-content;
+    }
+    .tabs {
+        display: none;
+    }
+    .burgerMenu {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .tabs {
+        display: flex;
+        visibility: visible;
+    }
+    .burgerMenu {
+        display: none;
+    }
 }

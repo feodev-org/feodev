@@ -24,6 +24,29 @@
     animation-timing-function: linear;
 }
 
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 33px;
+    left: 0;
+}
+
+@media screen {
+    .buttonContainer {
+        top: calc(100vh - 41px);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .buttonContainer {
+        top: calc(90vh - 41px);
+    }
+}
+
 .arrowButton {
     width: 33px;
     height: 33px;
@@ -31,8 +54,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 90vh;
     border: 1px solid #0C4DA777;
     border-radius: 50%;
 }

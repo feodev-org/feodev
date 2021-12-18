@@ -12,3 +12,33 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.logo {
+    height: 100px;
+}
+
+@media screen and (min-width: 900px) {
+    .logo {
+        height: 200px;
+    }
+}
+
+.title {
+    font-size: 3rem;
+}
+
+@media screen and (min-width: 900px) {
+    .title {
+        font-size: 6rem;
+    }
+}
+
+.motto {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 900px) {
+    .motto {
+        font-size: 3rem;
+    }
+}

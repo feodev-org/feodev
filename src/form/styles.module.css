@@ -9,17 +9,18 @@
 }
 
 .contactForm {
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
 }
 
 .honeypot {
     visibility: hidden;
     width: 0;
+    height: 13px;
 }
 
 .field {
-    width: 40vw;
+    width: 100%;
     margin-bottom: 13px;
 }
 
@@ -29,6 +30,7 @@
 
 .contactFormField {
     margin-bottom: 33px;
+    width: 100%;
 }
 
 .textarea {
@@ -37,4 +39,24 @@
 
 .contactFormSubmit {
     align-self: flex-end;
+}
+
+@media screen {
+    .fieldContainer {
+        margin: 0 13px;
+        display: flex;
+        justify-content: center;
+    }
+    .submitContainer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .fieldContainer {
+    }
+    .submitContainer {
+        justify-content: flex-end;
+    }
 }

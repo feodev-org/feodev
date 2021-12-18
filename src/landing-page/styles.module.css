@@ -4,10 +4,13 @@
 }
 
 .section {
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    z-index: 1;
+    padding: 77px 0;
 }
