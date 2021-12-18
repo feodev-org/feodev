@@ -1,0 +1,9 @@
+.left {
+    right: 90vw;
+    text-align: right;
+}
+
+.right {
+    left: 90vw;
+    text-align: left;
+}

@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Feodev - une passion, des valeurs"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Feodev</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="description" content="Feodev - une passion, des valeurs"/>
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png"/>
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+        <title>Feodev</title>
+    </head>
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+
+        <!-- A little help for the Netlify post-processing bots -->
+        <form name="mailing-list" netlify netlify-honeypot="important-field" hidden>
+            <input type="email" name="email"/>
+        </form>
+        <form name="contact" netlify netlify-honeypot="important-field" hidden>
+            <input type="email" name="email"/>
+            <input type="text" name="name"/>
+            <textarea name="message"></textarea>
+        </form>
+    </body>
 </html>

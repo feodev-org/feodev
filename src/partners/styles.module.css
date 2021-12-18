@@ -1,0 +1,19 @@
+.description {
+    margin: 33px 0;
+}
+
+.partnerTitle {
+    font-variant: small-caps;
+}
+
+.partnerImage {
+    height: 200px;
+    width: fit-content;
+    align-self: center;
+    opacity: 0.5;
+    transition: opacity ease 0.5s 0s;
+}
+
+.partnerImage:hover {
+    opacity: 0.8;
+}

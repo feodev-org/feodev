@@ -1,0 +1,40 @@
+.appBar {
+    background: linear-gradient(90deg, #f4e8b8 0%, #fffae3 35%, #f4e8b8 100%);
+}
+
+.toolBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title, .tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tab {
+    font-size: large;
+    position: relative;
+}
+
+.tab:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 13px;
+    width: 0;
+    border-bottom: 17px solid #0C4DA733;
+    transition: 0.4s;
+}
+
+.tab:hover:after {
+    width: 100%;
+}
+
+.activeTab:after {
+    width: 100%;
+}

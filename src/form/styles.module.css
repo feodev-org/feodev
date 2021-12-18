@@ -1,0 +1,40 @@
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.mailingListForm {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contactForm {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.honeypot {
+    visibility: hidden;
+    width: 0;
+}
+
+.field {
+    width: 40vw;
+    margin-bottom: 13px;
+}
+
+.submit {
+    margin-bottom: 13px;
+}
+
+.contactFormField {
+    margin-bottom: 33px;
+}
+
+.textarea {
+    min-height: 50vh;
+}
+
+.contactFormSubmit {
+    align-self: flex-end;
+}

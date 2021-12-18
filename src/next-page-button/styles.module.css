@@ -1,0 +1,42 @@
+@keyframes bounceAlpha {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+    25% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+    }
+    26% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.9);
+    }
+    55% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.arrowButton {
+    width: 33px;
+    height: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 3vh;
+    border: 1px solid #0C4DA777;
+    border-radius: 50%;
+}
+
+.arrowButtonIcon {
+    font-size: 25px;
+}

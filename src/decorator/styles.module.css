@@ -1,0 +1,13 @@
+.decorator {
+    font-family: "MedievalSharp", system-ui, sans-serif;
+    position: absolute;
+    font-weight: bold;
+    color: #8F0100;
+    width: 500px;
+    height: auto;
+    overflow: hidden;
+}
+
+.decoratorLine {
+    overflow: hidden;
+}

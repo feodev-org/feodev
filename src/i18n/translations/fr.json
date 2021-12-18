@@ -1,0 +1,69 @@
+{
+	"welcome": {
+		"title": "Feodev",
+		"motto": "Une passion. Des valeurs.",
+		"description": "Rejoignez la communauté des catholiques qui partagent plus qu'une simple passion pour la technologie !",
+		"form": {
+			"name": "Votre nom",
+			"email": "Votre e-mail",
+			"message": "Votre message",
+			"error": {
+				"name": "Votre nom est requis et ne doit pas dépasser 50 caractères.",
+				"email": "Adresse e-mail invalide.",
+				"message": "Votre message est requis et ne doit pas dépasser 500 caractères."
+			}
+		}
+	},
+	"header": {
+		"accueil": "accueil",
+		"valeurs": "valeurs",
+		"partenaires": "partenaires",
+		"contact": "contact"
+	},
+	"values": {
+		"page-title": "Nos valeurs",
+		"trust": {
+			"name": "Confiance",
+			"definition": "Placées sous les valeurs chrétiennes de charité fraternelle, d'entre-aide et de respect, les entreprises Feodev garantissent à leurs employés un écrin épanouissant, loin de la perversité de l'argent et de la jalousie des statuts.",
+			"image-description": "Homme tenant dans sa main une boussole"
+		},
+		"respect": {
+			"name": "Respect",
+			"definition": "Chacun sera respecté tel qu'il est, homme ou femme : un enfant de Dieu; dans la communauté Feodev, il ne peut pas y avoir de discrimination, puisqu'il n'y a pas de minorité, ni de « moi » supérieur à « nous ».",
+			"image-description": "Personne tenant délicatement un oiseau dans sa main"
+		},
+		"excellence": {
+			"name": "Excellence",
+			"definition": "Nous visons l'excellence par le respect de notre héritage, la confiance que nous accordons aux autres et la force que nous mettons dans notre travail quotidien. Mûs par cette objectif, nous mettons le temps qui nous est imparti au service de notre entreprise à la recherche d'un plus grand bien.",
+			"image-description": "Intérieur de la chapelle Saint-Pierre à Caen, France"
+		},
+		"justice": {
+			"name": "Justice",
+			"definition": "Avec la vérité pour principe, nous ne cherchons à rendre que la justice. À l'écoute de chacun, notre communauté ne cherche pas à nuir par opportunisme, mais à soutenir ceux qui le méritent.",
+			"image-description": "Statuette représentant la justice"
+		},
+		"transparency": {
+			"name": "Honnêteté",
+			"definition": "Ce que les entreprises modernes appellent « transparence » avec beaucoup d'orgueil, le chrétien a l'humilité de le pratiquer sous le nom d'honnêteté. Même dans les dossiers les plus complexes, les objectifs restent définis et clairs pour tout le monde.",
+			"image-description": "Mont-Saint-Michel dans la brume"
+		},
+		"privacy": {
+			"name": "Vie privée",
+			"definition": "Nous comprenons que le moyen le plus simple de rendre un produit « gratuit » aujourd'hui est via l'utilisation de publicité, mais nous encourageons l'abandon de cette pratique et prohibons la collecte abusive de données à des fins de revente ou de croissance désordonnée.",
+			"image-description": "Île isolée au milieu des flôts"
+		}
+	},
+	"credits": "Crédits :",
+	"contact": {
+		"page-title": "Laissez-nous un message !"
+	},
+	"scroll-to-top": "Remonter en haut de la page",
+	"partners": {
+		"page-title": "Nos partenaires",
+		"description": "Indépendants, petites ou moyennes entreprises, start-up, scale-up ou côtée au CAC40, voici la liste de ceux qui sont fier d'afficher leur appartenance à la communauté Feodev.",
+		"proposal": {
+			"title": "Et vous ?",
+			"description": "N'hésitez pas à nous contacter via le formulaire ci-dessous pour rejoindre cette liste !"
+		}
+	}
+}

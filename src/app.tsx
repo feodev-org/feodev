@@ -1,13 +1,24 @@
-import { ThemeProvider } from "@mui/material";
+import { Box, StyledEngineProvider, ThemeProvider } from "@mui/material";
 import LandingPage from "./landing-page";
-import { ColorModeContext, useTheme } from "./theme";
+import { ColorModeContext, useTheme } from "./hooks/use-theme";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 function App() {
-	const { colorMode, theme } = useTheme();
+	const { background, colorMode, theme } = useTheme();
+
 	return (
 		<ColorModeContext.Provider value={colorMode}>
 			<ThemeProvider theme={theme}>
-				<LandingPage/>
+				<StyledEngineProvider injectFirst>
+					<Box sx={{ background }}>
+						<BrowserRouter>
+							<Routes>
+								<Route index element={<Navigate to={"/accueil"} replace={true}/>}/>
+								<Route path={"/:anchor"} element={<LandingPage/>}/>
+							</Routes>
+						</BrowserRouter>
+					</Box>
+				</StyledEngineProvider>
 			</ThemeProvider>
 		</ColorModeContext.Provider>
 	);
