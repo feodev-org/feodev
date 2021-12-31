@@ -39,7 +39,8 @@ const Welcome = () => {
 					variant={"caption"}
 					color={"primary"}
 					textAlign={"center"}
-					width={"70vw"}
+					width={"100%"}
+					px={"13px"}
 				>
 					{translate("welcome.description")}
 				</Typography>
