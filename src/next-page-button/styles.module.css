@@ -33,18 +33,7 @@
     width: 100%;
     height: 33px;
     left: 0;
-}
-
-@media screen {
-    .buttonContainer {
-        top: calc(100vh - 41px);
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .buttonContainer {
-        top: calc(90vh - 41px);
-    }
+    top: calc(100vh - 41px);
 }
 
 .arrowButton {
