@@ -34,7 +34,7 @@ const MailingListForm = () => {
 			setSubmittedEmail(email);
 			setValue("email", email);
 		}
-	}, []);
+	}, [setValue]);
 
 	const onFormSubmit = (data: MailingListFormSchema) => {
 		fetch("/", {

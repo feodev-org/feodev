@@ -48,7 +48,7 @@ const ContactForm = () => {
 				localStorage.removeItem("feodev-form-contact");
 			}
 		}
-	}, []);
+	}, [setValue]);
 
 	const onFormSubmit = (data: ContactFormSchema) => {
 		fetch("/", {
