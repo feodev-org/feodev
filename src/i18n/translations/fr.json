@@ -11,7 +11,8 @@
 				"name": "Votre nom est requis et ne doit pas dépasser 50 caractères.",
 				"email": "Adresse e-mail invalide.",
 				"message": "Votre message est requis et ne doit pas dépasser 500 caractères."
-			}
+			},
+			"submit": "Envoyer"
 		}
 	},
 	"header": {

@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from "@mui/material";
+import { Grid, TextField } from "@mui/material";
 import { useClasses } from "../hooks/use-classes";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 import classes from "./styles.module.css";
 import { encodeFormData } from "../helpers";
 import { NetlifyForm } from "../types.defs";
+import SubmitButton from "./submit-button";
+import {useEffect, useState} from "react";
 
 interface ContactFormSchema {
 	email: string;
@@ -27,9 +29,26 @@ const ContactForm = () => {
 	const containerClasses = useClasses([classes.form, classes.contactForm]);
 	const submitButtonClasses = useClasses([classes.contactFormSubmit, classes.submitContainer, classes.fieldContainer]);
 	const fieldClasses = useClasses([classes.field, classes.contactFormField]);
-	const { register, formState: { errors }, handleSubmit } = useForm<ContactFormSchema>({
+	const { register, formState: { errors, isSubmitSuccessful, isSubmitting }, handleSubmit, setValue } = useForm<ContactFormSchema>({
 		resolver: yupResolver(contactFormSchema)
 	});
+	const [submittedForm, setSubmittedForm] = useState<ContactFormSchema | undefined>(undefined);
+
+	useEffect(() => {
+		const formStr = localStorage.getItem("feodev-form-contact");
+		if (formStr) {
+			try {
+				const parsedForm = JSON.parse(formStr) as ContactFormSchema;
+				setSubmittedForm(parsedForm);
+				setValue("email", parsedForm.email);
+				setValue("name", parsedForm.name);
+				setValue("message", parsedForm.message);
+			} catch (err) {
+				console.error("Unable to parse form data from previous submission: ", err);
+				localStorage.removeItem("feodev-form-contact");
+			}
+		}
+	}, []);
 
 	const onFormSubmit = (data: ContactFormSchema) => {
 		fetch("/", {
@@ -38,6 +57,7 @@ const ContactForm = () => {
 			body: encodeFormData<ContactFormSchema & NetlifyForm>({ "form-name": "contact", ...data })
 		}).then(() => {
 			console.log("Submit form: ", data);
+			localStorage.setItem("feodev-form-contact", JSON.stringify(data));
 		}).catch(error => {
 			console.error("Error while submitting form: ", { error, data });
 		});
@@ -65,6 +85,7 @@ const ContactForm = () => {
 					helperText={Boolean(errors.name) && translate("welcome.form.error.name")}
 					autoComplete={"name"}
 					className={fieldClasses}
+					disabled={isSubmitSuccessful || submittedForm?.name !== undefined}
 				/>
 			</Grid>
 			<Grid item xs={12} className={classes.fieldContainer}>
@@ -78,6 +99,7 @@ const ContactForm = () => {
 					helperText={Boolean(errors.email) && translate("welcome.form.error.email")}
 					autoComplete={"email"}
 					className={fieldClasses}
+					disabled={isSubmitSuccessful || submittedForm?.email !== undefined}
 				/>
 			</Grid>
 			<Grid item xs={12} className={classes.fieldContainer}>
@@ -92,10 +114,15 @@ const ContactForm = () => {
 					helperText={Boolean(errors.message) && translate("welcome.form.error.message")}
 					autoComplete={"message"}
 					className={fieldClasses}
+					disabled={isSubmitSuccessful || submittedForm?.message !== undefined}
 				/>
 			</Grid>
 			<Grid item xs={12} className={submitButtonClasses}>
-				<Button type={"submit"} color={"primary"} size={"large"} variant={"contained"}>Envoyer</Button>
+				<SubmitButton
+					disabled={Boolean(errors.email) || isSubmitSuccessful || submittedForm !== undefined}
+					loading={isSubmitting}
+					success={isSubmitSuccessful}
+				/>
 			</Grid>
 		</Grid>
 	);

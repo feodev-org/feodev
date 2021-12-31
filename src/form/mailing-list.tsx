@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from "@mui/material";
+import { Grid, TextField } from "@mui/material";
 import { useClasses } from "../hooks/use-classes";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 import classes from "./styles.module.css";
 import { encodeFormData } from "../helpers";
 import { NetlifyForm } from "../types.defs";
+import {useEffect, useState} from "react";
+import SubmitButton from "./submit-button";
 
 interface MailingListFormSchema {
 	email: string;
@@ -21,9 +23,18 @@ const mailingListFormSchema = yup.object({
 const MailingListForm = () => {
 	const [translate] = useTranslation();
 	const containerClasses = useClasses([classes.form, classes.mailingListForm]);
-	const { register, formState: { errors }, handleSubmit } = useForm<MailingListFormSchema>({
+	const { register, formState: { errors, isSubmitting, isSubmitSuccessful }, handleSubmit, setValue } = useForm<MailingListFormSchema>({
 		resolver: yupResolver(mailingListFormSchema)
 	});
+	const [submittedEmail, setSubmittedEmail] = useState<string | undefined>(undefined);
+
+	useEffect(() => {
+		const email = localStorage.getItem("feodev-form-mailing-list");
+		if (email) {
+			setSubmittedEmail(email);
+			setValue("email", email);
+		}
+	}, []);
 
 	const onFormSubmit = (data: MailingListFormSchema) => {
 		fetch("/", {
@@ -32,6 +43,7 @@ const MailingListForm = () => {
 			body: encodeFormData<MailingListFormSchema & NetlifyForm>({ "form-name": "mailing-list", ...data })
 		}).then(() => {
 			console.log("Submit form: ", data);
+			localStorage.setItem("feodev-form-mailing-list", data.email);
 		}).catch(error => {
 			console.error("Error while submitting form: ", { error, data });
 		});
@@ -59,10 +71,15 @@ const MailingListForm = () => {
 					helperText={Boolean(errors.email) && translate("welcome.form.error.email")}
 					autoComplete={"email"}
 					className={classes.field}
+					disabled={isSubmitSuccessful || submittedEmail !== undefined}
 				/>
 			</Grid>
 			<Grid item xs={12} md={1} className={classes.fieldContainer}>
-				<Button type={"submit"} color={"primary"} size={"large"} variant={"contained"} className={classes.submit}>Envoyer</Button>
+				<SubmitButton
+					disabled={Boolean(errors.email) || isSubmitSuccessful || submittedEmail !== undefined}
+					loading={isSubmitting}
+					success={isSubmitSuccessful}
+				/>
 			</Grid>
 		</Grid>
 	);
