@@ -28,7 +28,7 @@ const Partners = () => {
 				<Grid item key={"proposal"}>
 					<Stack direction={"column"} spacing={{ xs: 2, md: 4 }}>
 						<Typography variant={"h6"} alignSelf={"center"} className={classes.partnerTitle}>{translate("partners.proposal.title")}</Typography>
-						<Typography variant={"caption"}>{translate("partners.proposal.description")}</Typography>
+						<Typography variant={"caption"} className={classes.partnerDescription}>{translate("partners.proposal.description")}</Typography>
 						<Link component={RouterLink} to={"/contact"} alignSelf={"center"}>Nous contacter</Link>
 					</Stack>
 				</Grid>

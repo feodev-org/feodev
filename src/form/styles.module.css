@@ -43,7 +43,8 @@
 
 @media screen {
     .fieldContainer {
-        margin: 0 13px;
+        padding: 0 13px;
+        max-width: 1000px;
         display: flex;
         justify-content: center;
     }
