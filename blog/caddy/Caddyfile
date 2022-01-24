@@ -20,6 +20,3 @@ blog.feodev.org {
 		Referrer-Policy no-referrer-when-downgrade
 	}
 }
-www.blog.feodev.org {
-	redir https://blog.feodev.org{uri}
-}
