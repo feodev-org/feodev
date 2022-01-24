@@ -22,5 +22,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# WebStorm
+# Code editors
 /.idea
+/.vscode
+
+# Blog
+/blog/content
+/blog/caddy
+!blog/content/.gitkeep
+!blog/caddy/Caddyfile
+!blog/caddy/data/.gitkeep
+!blog/caddy/config/.gitkeep

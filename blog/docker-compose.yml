@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+        caddy:
+                image: caddy:2-alpine
+                restart: unless-stopped
+                ports:
+                        - "80:80"
+                        - "443:443"
+                volumes:
+                        - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+                        - ./caddy/data:/etc/caddy/data
+                        - ./caddy/config:/etc/caddy/config
+
+        ghost:
+                image: ghost:4-alpine
+                restart: unless-stopped
+                depends_on:
+                        - caddy
+                environment:
+                        - url=https://blog.feodev.org
+                volumes:
+                        - ./content:/var/lib/ghost/content
