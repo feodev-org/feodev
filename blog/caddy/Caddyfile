@@ -2,7 +2,10 @@
 	email contact@feodev.org
 }
 blog.feodev.org {
-	reverse_proxy ghost:2368
+	reverse_proxy ghost:2368 {
+		header_up Host {upstream_hostport}
+		header_up X-Forwarded-Host {host}
+	}
 	header {
 		# disable FLoC tracking
 		Permissions-Policy interest-cohort=()

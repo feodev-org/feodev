@@ -1,0 +1,38 @@
+{
+	"url": "http://blog.feodev.org",
+	"server": {
+		"host": "0.0.0.0",
+		"port": 2368
+	},
+	"database": {
+		"client": "sqlite3",
+		"connection": {
+			"filename": "content/data/ghost.db"
+		},
+		"useNullAsDefault": true,
+		"debug": false
+	},
+	"mail": {
+		"transport": "SMTP",
+		"options": {
+			"service": "Mailgun",
+			"host": "smtp.eu.mailgun.org",
+			"port": 465,
+			"secure": true
+		},
+		"from": "'Feodev Blog' <contact@feodev.org>"
+	},
+	"logging": {
+		"level": "info",
+		"rotation": {
+			"enabled": true,
+			"period": "1d",
+			"count": 14
+		},
+		"transports": ["stdout", "file"],
+		"slowHelper": {
+			"level": "warn",
+			"threshold": 200
+		}
+	}
+}

@@ -27,9 +27,12 @@ yarn-error.log*
 /.vscode
 
 # Blog
-/blog/content
-/blog/caddy
-!blog/content/.gitkeep
-!blog/caddy/Caddyfile
-!blog/caddy/data/.gitkeep
-!blog/caddy/config/.gitkeep
+/blog/.env
+/blog/caddy/*
+/blog/content/*
+!/blog/caddy
+!/blog/content
+!/blog/content/.gitkeep
+!/blog/caddy/Caddyfile
+!/blog/caddy/data/.gitkeep
+!/blog/caddy/config/.gitkeep

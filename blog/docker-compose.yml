@@ -9,15 +9,15 @@ services:
                         - "443:443"
                 volumes:
                         - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-                        - ./caddy/data:/etc/caddy/data
-                        - ./caddy/config:/etc/caddy/config
+                        - ./caddy/data:/data
+                        - ./caddy/config:/config
 
         ghost:
                 image: ghost:4-alpine
                 restart: unless-stopped
                 depends_on:
                         - caddy
-                environment:
-                        - url=https://blog.feodev.org
+                env_file: .env
                 volumes:
+                        - ./config.production.json:/var/lib/ghost/config.production.json
                         - ./content:/var/lib/ghost/content
