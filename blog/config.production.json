@@ -5,12 +5,12 @@
 		"port": 2368
 	},
 	"database": {
-		"client": "sqlite3",
+		"client": "mysql",
 		"connection": {
-			"filename": "content/data/ghost.db"
-		},
-		"useNullAsDefault": true,
-		"debug": false
+			"host": "db",
+			"port": 3306,
+			"database": "feodev-db"
+		}
 	},
 	"mail": {
 		"transport": "SMTP",
