@@ -31,6 +31,7 @@ yarn-error.log*
 /blog/caddy/*
 /blog/content/*
 /blog/mysql/*
+/blog/mysql/data/*
 !/blog/caddy
 !/blog/caddy/Caddyfile
 !/blog/caddy/config/.gitkeep
@@ -39,3 +40,5 @@ yarn-error.log*
 !/blog/content/.gitkeep
 !/blog/mysql
 !/blog/mysql/.gitkeep
+!/blog/mysql/data
+!/blog/mysql/data/.gitkeep
