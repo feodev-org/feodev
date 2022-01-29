@@ -39,6 +39,8 @@ yarn-error.log*
 !/blog/content
 !/blog/content/.gitkeep
 !/blog/mysql
-!/blog/mysql/.gitkeep
+!/blog/mysql/Dockerfile
+!/blog/mysql/backuper.sh
+!/blog/mysql/patched-entrypoint.sh
 !/blog/mysql/data
 !/blog/mysql/data/.gitkeep

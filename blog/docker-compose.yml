@@ -13,12 +13,14 @@ services:
                         - ./caddy/config:/config
 
         db:
-                image: mysql:8
+                build: ./mysql
                 restart: unless-stopped
                 env_file: .env
+                entrypoint: /patched-entrypoint.sh
                 command: --default-authentication-plugin=mysql_native_password
                 volumes:
                         - ./mysql/data:/var/lib/mysql
+                        - ./mysql/patched-entrypoint.sh:/patched-entrypoint.sh
 
         ghost:
                 image: ghost:4-alpine

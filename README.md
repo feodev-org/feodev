@@ -20,3 +20,7 @@ N'hésitez pas à nous contacter via le formulaire sur le site ou à faire une P
 - hookform
 - i18n
 - Typescript
+
+## The blog
+
+The blog is deployed thanks to a docker stack that you can check [here](/blog/README.md).
