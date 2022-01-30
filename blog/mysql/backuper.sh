@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Setup cron to do the backup, zip it, then upload it to the object storage described in the rclone conf
 FILE_TIMESTAMP=`date +"%Y%m%d%H%M%S"`
