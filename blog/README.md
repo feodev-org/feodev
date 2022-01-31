@@ -34,3 +34,4 @@ It is needed by the custom docker image.
 
 Use the `docker-compose up -d` command to launch the containers creation.
 Check that every day at midnight, a backup is sent to your configured block storage.
+There is also a compressed archive of an internationalized version of the default casper theme; upload the zip via the Ghost admin panel.
