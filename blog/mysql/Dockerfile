@@ -25,4 +25,4 @@ COPY rclone.conf /root/.config/rclone/rclone.conf
 COPY backuper.sh /backuper/backuper.sh
 
 # Finally, add a cron task to execute the backup
-RUN crontab -l | { cat; echo "0 0 * * * MYSQL_ROOT_PASSWORD=\$MYSQL_ROOT_PASSWORD MYSQL_DATABASE=\$MYSQL_DATABASE /backuper/backuper.sh >> /backuper/backups.log 2>&1"; } | crontab -
+RUN crontab -l | { cat; echo "0 0 * * * set -o allexport; . /backuper/.env; set +o allexport; /backuper/backuper.sh >> /backuper/backups.log 2>&1"; } | crontab -

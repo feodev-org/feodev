@@ -21,6 +21,7 @@ services:
                 volumes:
                         - ./mysql/data:/var/lib/mysql
                         - ./mysql/patched-entrypoint.sh:/patched-entrypoint.sh
+                        - ./.env:/backuper/.env
 
         ghost:
                 image: ghost:4-alpine
