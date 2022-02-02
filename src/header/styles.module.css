@@ -21,6 +21,35 @@
     position: relative;
 }
 
+.blogTab {
+    font-size: large;
+    background-color: #0C4DA7;
+    color: #f4e8b8;
+    padding: 3px 17px;
+    border-radius: 13px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.blogTab:hover {
+    background-color: #f4e8b8;
+    padding: 1px 15px;
+    color: #0C4DA7;
+    border: 2px solid #0C4DA7;
+}
+
+.mobileMenuItem .blogTab {
+    max-width: 100px;
+    color: white;
+    margin: 0 auto;
+}
+
+.mobileMenuItem .blogTab:hover {
+    color: #0C4DA7;
+    background-color: white;
+}
+
 .tab:after {
     content: "";
     position: absolute;

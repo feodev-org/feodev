@@ -21,6 +21,6 @@ N'hésitez pas à nous contacter via le formulaire sur le site ou à faire une P
 - i18n
 - Typescript
 
-## The blog
+## Le blog
 
-The blog is deployed thanks to a docker stack that you can check [here](/blog/README.md).
+Le blog est déployé sur un serveur indépendant grâce à une stack docker que [vous pouvez trouver ici](/blog/README.md).

@@ -4,12 +4,13 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import React, { forwardRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Grid, Link, Typography } from "@mui/material";
+import { Box, Grid, Link, Typography } from "@mui/material";
 import { PAGE_ANCHORS } from "../data";
 import { Link as RouterLink, useParams } from "react-router-dom";
 import classes from "./styles.module.css";
 import { useTranslation } from "react-i18next";
 import { scrollToElementWithId } from "../helpers";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const Transition = forwardRef(function Transition(
 	props: TransitionProps & {
@@ -35,7 +36,7 @@ const MobileMenu = () => {
 	return (
 		<>
 			<IconButton aria-label="menu" onClick={() => setMenuDialogOpen(true)}>
-				<MenuIcon color={"primary"}/>
+				<MenuIcon color={"primary"} />
 			</IconButton>
 			<Dialog
 				fullScreen
@@ -56,13 +57,27 @@ const MobileMenu = () => {
 										onClick={() => handlePageScroll(item)}
 									>
 										<Typography variant="button" component="div" color={"primary"}
-													className={[classes.tab, anchor === item ? classes.activeTab : ""].join(" ")}>
+											className={[classes.tab, anchor === item ? classes.activeTab : ""].join(" ")}>
 											{translate(`header.${item}`)}
 										</Typography>
 									</Link>
 								</Grid>
 							))
 						}
+						<Grid key={'blog-link'} item xs={12} className={classes.mobileMenuItem}>
+							<Link
+								href={`https://blog.feodev.org`}
+								target="_blank"
+								rel="noopener noreferrer"
+								underline={"none"}
+								mr={8}
+							>
+								<Typography variant="button" component="div" color={"primary"} className={classes.blogTab}>
+									<Box mr={1}>{translate(`header.blog`)}</Box>
+									<OpenInNewIcon fontSize={"small"} />
+								</Typography>
+							</Link>
+						</Grid>
 					</Grid>
 				</Grid>
 			</Dialog>

@@ -19,7 +19,8 @@
 		"accueil": "accueil",
 		"valeurs": "valeurs",
 		"partenaires": "partenaires",
-		"contact": "contact"
+		"contact": "contact",
+		"blog": "blog"
 	},
 	"values": {
 		"page-title": "Nos valeurs",

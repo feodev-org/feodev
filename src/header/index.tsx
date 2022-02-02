@@ -7,6 +7,7 @@ import { scrollToElementWithId } from "../helpers";
 import classes from "./styles.module.css";
 import { useTheme } from "../hooks/use-theme";
 import MobileMenu from "./mobile-menu";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 interface ElevationScrollProps {
 	children: ReactElement;
@@ -52,7 +53,7 @@ const Header = () => {
 							<Box className={classes.title}>
 								<Link component={RouterLink} to={"/"} underline={"none"} mr={8}>
 									<Stack direction={"row"} spacing={2}>
-										<img src={"/assets/logo.png"} alt={"Logo Feodev"} height={40}/>
+										<img src={"/assets/logo.png"} alt={"Logo Feodev"} height={40} />
 										<Typography variant="h4" component="div" color={"primary"}>
 											Feodev
 										</Typography>
@@ -71,22 +72,35 @@ const Header = () => {
 											onClick={() => handlePageScroll(item)}
 										>
 											<Typography variant="button" component="div" color={"primary"}
-														className={[classes.tab, anchor === item ? classes.activeTab : ""].join(" ")}>
+												className={[classes.tab, anchor === item ? classes.activeTab : ""].join(" ")}>
 												{translate(`header.${item}`)}
 											</Typography>
 										</Link>
 									))
 								}
+								<Link
+									key={'blog-link'}
+									href={`https://blog.feodev.org`}
+									target="_blank"
+									rel="noopener noreferrer"
+									underline={"none"}
+									mr={8}
+								>
+									<Typography variant="button" component="div" color={"primary"} className={classes.blogTab}>
+										<Box mr={1}>{translate(`header.blog`)}</Box>
+										<OpenInNewIcon fontSize={"small"} />
+									</Typography>
+								</Link>
 							</Box>
 							<Box className={classes.burgerMenu}>
-								<MobileMenu/>
+								<MobileMenu />
 							</Box>
 						</Toolbar>
 					</AppBar>
 				</Slide>
 			</ElevationScroll>
 			<Slide in={matchSm || scrolledWhileXs}>
-				<Toolbar/>
+				<Toolbar />
 			</Slide>
 		</>
 	);
